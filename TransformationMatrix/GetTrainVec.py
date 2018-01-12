@@ -47,8 +47,8 @@ if __name__ == "__main__":
         except KeyError:
             print('WARNING: OOV dictionary entry ({0} - {1})'.format(src, trg), file=sys.stderr)
 
-    origEnVecs=preprocessing.normalize(en_vec)
-    origForeignVecs=preprocessing.normalize(de_vec)
+    # origEnVecs=preprocessing.normalize(en_vec)
+    # origForeignVecs=preprocessing.normalize(de_vec)
 
     subsetEnVecs = en_vec[src_indices]
     subsetForeignVecs = de_vec[trg_indices]
@@ -62,3 +62,4 @@ if __name__ == "__main__":
     target_file.close()
     srcfile.close()
     trgfile.close()
+

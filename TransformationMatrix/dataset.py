@@ -36,6 +36,9 @@ class MyDataSet(torch.utils.data.Dataset):
         src_words, view1_vec = embeddings.read(view1)
         trg_words, view2_vec = embeddings.read(view2)
 
+        view1_vec = embeddings.length_normalize(view1_vec)
+        view2_vec = embeddings.length_normalize(view2_vec)
+
         view1.close()
         view2.close()
 

@@ -44,10 +44,10 @@ def length_normalize(matrix):
     norms[norms == 0] = 1
     return matrix / norms[:, np.newaxis]
 
-
 def mean_center(matrix):
     avg = np.mean(matrix, axis=0)
     return matrix - avg
+
 
 def length_normalize_dimensionwise(matrix):
     norms = np.sqrt(np.sum(matrix**2, axis=0))
@@ -59,5 +59,6 @@ def mean_center_embeddingwise(matrix):
     avg = np.mean(matrix, axis=1)
     return matrix - avg[:, np.newaxis]
 
+
 def normalize(matrix):
-    pass
+    return preprocessing.normalize(matrix)
